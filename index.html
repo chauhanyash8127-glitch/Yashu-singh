@@ -177,18 +177,21 @@
     <div class="bottom-initials">A & K</div>
 </div>
 
-    
-
+        <script>
         setTimeout(function() {
-            var splash = document.getElementById('splash-screen');
+            var splash = document.querySelector('.intro-container');
             var app = document.getElementById('main-app');
-            splash.style.opacity = 0;
+            if(splash) splash.style.opacity = '0';
             setTimeout(function() {
-                splash.style.display = 'none';
-                app.style.display = 'block';
+                if(splash) splash.style.display = 'none';
+                if(app) app.style.display = 'block';
                 document.body.style.overflow = 'auto';
             }, 500);
         }, 3000);
+    </script>
+
+
+        
     </script>
 
 </body>

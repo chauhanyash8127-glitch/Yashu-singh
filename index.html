@@ -98,7 +98,49 @@
             background-color: #00d2ff;
             color: black;
             transform: scale(1.05);
-        }
+        } .intro-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #0b0f19;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeOutBg 0.6s cubic-bezier(0.16, 1, 0.3, 1) 2.5s forwards;
+}
+.logo-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.brand-letter {
+  font-family: 'Montserrat', 'Helvetica Neue', sans-serif;
+  font-size: 7rem;
+  font-weight: 900;
+  color: #ffffff;
+  opacity: 0;
+  transform: scale(0.4) translateY(20px);
+  filter: blur(5px);
+  animation: cinematicReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
+}
+@keyframes cinematicReveal {
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: blur(0);
+  }
+}
+@keyframes fadeOutBg {
+  to {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+
         
         /* नीचे के नॉर्मल अक्षर */
         .bottom-initials {
@@ -111,11 +153,16 @@
     </style>
 </head>
 <body>
+<div class="intro-container">
+  <div class="logo-wrapper">
+    <span class="brand-letter">A</span>
+  </div>
+</div>
 
-    <div id="splash-screen">
-        <div class="smart-logo">A</div>
-        <div class="loader-text">ANKIT</div>
-    </div>
+    
+    
+        
+
 
     <div id="main-app">
         <div class="app-header">My Private Hub 🚀</div>

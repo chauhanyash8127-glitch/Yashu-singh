@@ -31,34 +31,38 @@
         }
         
         /* स्मार्ट 'A' लोगो डिज़ाइन */
-        .smart-logo {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            background: linear-gradient(45deg, #00d2ff, #00c6ff);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 65px;
-            font-weight: bold;
-            color: #121212;
-            box-shadow: 0 0 30px rgba(0, 210, 255, 0.6);
-            animation: pulse 2s infinite ease-in-out;
-            border: 4px solid #fff;
-        }
-        
-        .loader-text {
-            font-size: 22px;
-            margin-top: 25px;
-            letter-spacing: 3px;
-            color: #00d2ff;
-            font-weight: bold;
-        }
+        ./* सर्वम AI जैसा नियॉन ग्लोइंग स्पिनर लोगो */
+.smart-logo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 4px solid rgba(0, 210, 255, 0.1);
+  border-top: 4px solid #00d2ff;
+  border-right: 4px solid #00ffaa;
+  box-shadow: 0 0 30px rgba(0, 210, 255, 0.5), inset 0 0 15px rgba(0, 255, 170, 0.3);
+  animation: sarvamSpin 1.5s linear infinite;
+}
 
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); box-shadow: 0 0 30px rgba(0, 210, 255, 0.6); }
-            50% { transform: scale(1.08); box-shadow: 0 0 50px rgba(0, 210, 255, 0.9); }
-        }
+.loader-text {
+  font-size: 20px;
+  margin-top: 25px;
+  letter-spacing: 4px;
+  color: #00d2ff;
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(0, 210, 255, 0.6);
+  animation: pulseText 1.5s ease-in-out infinite;
+}
+
+@keyframes sarvamSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes pulseText {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
 
         /* 2. MAIN APP DASHBOARD (मुख्य ऐप) */
         #main-app {
@@ -155,7 +159,8 @@
 <body>
 <div class="intro-container">
   <div class="logo-wrapper">
-    <span class="brand-letter">A</span>
+    <span class="brand-letter"></span>
+
   </div>
 </div>
 

@@ -131,17 +131,28 @@
 </div>
 
 <script>
-  // 3 सेकंड का टाइमर स्क्रीन छुपाने के लिए
-  setTimeout(function() {
-    var splash = document.getElementById('splash-screen');
-    var app = document.getElementById('main-app');
-    if(splash) splash.style.opacity = '0';
+  // चक्र को छुपाकर अंदर का सर्च बार दिखाने का पक्का कोड
+  window.addEventListener('load', function() {
     setTimeout(function() {
-      if(splash) splash.style.display = 'none';
-      if(app) app.style.display = 'block';
-      document.body.style.overflow = 'auto';
-    }, 500);
-  }, 3000);
+      var splash = document.getElementById('splash-screen');
+      var app = document.getElementById('main-app');
+      
+      if(splash) {
+        splash.style.opacity = '0';
+        splash.style.pointerEvents = 'none';
+      }
+      
+      setTimeout(function() {
+        if(splash) splash.style.display = 'none';
+        if(app) {
+          app.style.display = 'block';
+          app.style.visibility = 'visible';
+        }
+        document.body.style.overflow = 'auto';
+      }, 500);
+    }, 2500); // 2.5 सेकंड नाचने के बाद अपने आप हट जाएगा
+  });
+
 
   // ब्राउज़र लोड लॉजिक
   const addressBar = document.getElementById('address-bar');
